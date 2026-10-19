@@ -2,10 +2,11 @@ const mongoose = require("mongoose");
 const FinancialData = require("../models/financialData.js");
 const BusinessProfile = require("../models/businessProfile.js");
 
+// Get all financial transactions for the logged-in user's business
 async function getFinancialData(req, res) {
   try {
     const businessProfile = await BusinessProfile.findOne({
-      owner: req.user.id,
+      owner: req.user._id,
     });
 
     if (!businessProfile) {
@@ -24,7 +25,7 @@ async function getFinancialData(req, res) {
       data: transactions,
     });
   } catch (error) {
-    console.error("Get financial data error:", error.message);
+    console.error("Get financial data error:", error);
 
     return res.status(500).json({
       message: "Unable to retrieve financial data",
@@ -32,10 +33,11 @@ async function getFinancialData(req, res) {
   }
 }
 
+// Create a new financial transaction
 async function createFinancialData(req, res) {
   try {
     const businessProfile = await BusinessProfile.findOne({
-      owner: req.user.id,
+      owner: req.user._id,
     });
 
     if (!businessProfile) {
@@ -55,12 +57,34 @@ async function createFinancialData(req, res) {
     });
   } catch (error) {
     if (error.name === "ValidationError") {
+      console.error("Financial data validation details:", error);
+
       return res.status(400).json({
         message: "Financial transaction validation failed",
+        errors: Object.values(error.errors).map((item) => ({
+          field: item.path,
+          message: item.message,
+          value: item.value,
+        })),
       });
     }
 
-    console.error("Create financial data error:", error.message);
+    if (error.name === "CastError") {
+      console.error("Financial data cast error:", error);
+
+      return res.status(400).json({
+        message: "Invalid value provided for a financial transaction",
+        errors: [
+          {
+            field: error.path,
+            message: error.message,
+            value: error.value,
+          },
+        ],
+      });
+    }
+
+    console.error("Create financial data error:", error);
 
     return res.status(500).json({
       message: "Unable to create financial transaction",
@@ -68,6 +92,7 @@ async function createFinancialData(req, res) {
   }
 }
 
+// Update an existing financial transaction
 async function updateFinancialData(req, res) {
   try {
     const { id } = req.params;
@@ -79,7 +104,7 @@ async function updateFinancialData(req, res) {
     }
 
     const businessProfile = await BusinessProfile.findOne({
-      owner: req.user.id,
+      owner: req.user._id,
     });
 
     if (!businessProfile) {
@@ -137,12 +162,19 @@ async function updateFinancialData(req, res) {
     });
   } catch (error) {
     if (error.name === "ValidationError") {
+      console.error("Update financial data validation details:", error);
+
       return res.status(400).json({
         message: "Financial transaction validation failed",
+        errors: Object.values(error.errors).map((item) => ({
+          field: item.path,
+          message: item.message,
+          value: item.value,
+        })),
       });
     }
 
-    console.error("Update financial data error:", error.message);
+    console.error("Update financial data error:", error);
 
     return res.status(500).json({
       message: "Unable to update financial transaction",
@@ -150,6 +182,7 @@ async function updateFinancialData(req, res) {
   }
 }
 
+// Delete an existing financial transaction
 async function deleteFinancialData(req, res) {
   try {
     const { id } = req.params;
@@ -161,7 +194,7 @@ async function deleteFinancialData(req, res) {
     }
 
     const businessProfile = await BusinessProfile.findOne({
-      owner: req.user.id,
+      owner: req.user._id,
     });
 
     if (!businessProfile) {
@@ -185,7 +218,7 @@ async function deleteFinancialData(req, res) {
       message: "Financial transaction deleted successfully",
     });
   } catch (error) {
-    console.error("Delete financial data error:", error.message);
+    console.error("Delete financial data error:", error);
 
     return res.status(500).json({
       message: "Unable to delete financial transaction",

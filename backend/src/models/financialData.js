@@ -57,9 +57,14 @@ const financialDataSchema = new mongoose.Schema(
       default: null,
       validate: {
         validator(value) {
-          return value === null || this.isPaid === true;
+          if (this.isPaid === true) {
+            return value instanceof Date && !isNaN(value.getTime());
+          }
+
+          return value === null || value === undefined;
         },
-        message: "Payment date can only be set for paid transactions",
+        message:
+          "Paid transactions require a valid payment date, and unpaid transactions cannot have one.",
       },
     },
   },
@@ -68,6 +73,7 @@ const financialDataSchema = new mongoose.Schema(
   },
 );
 
+// Indexes for financial data queries
 financialDataSchema.index({
   businessProfile: 1,
   date: -1,

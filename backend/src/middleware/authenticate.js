@@ -49,28 +49,34 @@ async function authenticate(req, res, next) {
       });
     }
 
+    // Attach the authenticated user to the request.
+    // Both _id and id are provided for compatibility.
     req.user = {
+      _id: user._id,
       id: user._id.toString(),
       username: user.username,
       email: user.email,
       role: user.role,
     };
 
-    next();
+    return next();
   } catch (error) {
-    if (
-      error.name === "JsonWebTokenError" ||
-      error.name === "TokenExpiredError"
-    ) {
+    if (error.name === "TokenExpiredError") {
       return res.status(401).json({
-        message: "Invalid or expired token. Please log in again.",
+        message: "Authentication token has expired. Please log in again.",
+      });
+    }
+
+    if (error.name === "JsonWebTokenError") {
+      return res.status(401).json({
+        message: "Invalid authentication token",
       });
     }
 
     console.error("Authentication error:", error.message);
 
     return res.status(500).json({
-      message: "Unable to verify authentication",
+      message: "Unable to authenticate the request",
     });
   }
 }
