@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-const businessProfileRoutes = require("./routes/businessProfileRoutes.js");
+const businessProfileRoutes = require("./routes/BusinessProfileRoutes.js");
 const financialDataRoutes = require("./routes/financialDataRoutes.js");
 const financialAnalysisRoutes = require("./routes/financialAnalysisRoutes.js");
 const authRoutes = require("./routes/authRoutes.js");
