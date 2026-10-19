@@ -1,9 +1,12 @@
 import { Navigate } from "react-router-dom";
+import useInactivityLogout from "../hooks/useInactivityLogout";
 
 function ProtectedRoute({ children }) {
-  const isAuthenticated = false;
+  const token = localStorage.getItem("finsight_token");
 
-  if (!isAuthenticated) {
+  useInactivityLogout();
+
+  if (!token) {
     return <Navigate to="/login" replace />;
   }
 
