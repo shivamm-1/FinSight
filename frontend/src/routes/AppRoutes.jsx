@@ -13,7 +13,7 @@ import ProfitLoss from "../pages/ProfitLoss";
 import ProfitMargin from "../pages/ProfitMargin";
 import CashFlow from "../pages/CashFlow";
 import RatioAnalysis from "../pages/RatioAnalysis";
-import BreakEven from "../pages/breakEven";
+import BreakEven from "../pages/BreakEven";
 import ProductProfitability from "../pages/ProductProfitability";
 import TrendAnalysis from "../pages/TrendAnalysis";
 import GoalPlanning from "../pages/GoalPlanning";
