@@ -2,10 +2,10 @@ const express = require("express");
 
 const {
   getFinancialAnalysisController,
-} = require("../controllers/financialAnalysisController.js");
+} = require("../controllers/FinancialAnalysisController.js");
 
-const authenticate = require("../middleware/authenticate.js");
-const authorizeRoles = require("../middleware/authorizeRoles.js");
+const authenticate = require("../middleware/Authenticate.js");
+const authorizeRoles = require("../middleware/AuthorizeRoles.js");
 
 const router = express.Router();
 

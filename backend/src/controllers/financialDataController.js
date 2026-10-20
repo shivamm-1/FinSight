@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const FinancialData = require("../models/financialData.js");
-const BusinessProfile = require("../models/businessProfile.js");
+const FinancialData = require("../models/FinancialData.js");
+const BusinessProfile = require("../models/BusinessProfile.js");
 
 // Get all financial transactions for the logged-in user's business
 async function getFinancialData(req, res) {

@@ -1,26 +1,26 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "../pages/home";
-import Login from "../pages/login";
-import Register from "../pages/register";
-import Dashboard from "../pages/dashboard";
-import BusinessProfile from "../pages/businessProfile";
-import FinancialData from "../pages/financialData";
-import ImportData from "../pages/importData";
-import RevenueAnalysis from "../pages/revenueAnalysis";
-import ExpenseAnalysis from "../pages/expenseAnalysis";
-import ProfitLoss from "../pages/profitLoss";
-import ProfitMargin from "../pages/profitMargin";
-import CashFlow from "../pages/cashFlow";
-import RatioAnalysis from "../pages/ratioAnalysis";
+import Home from "../pages/Home";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import Dashboard from "../pages/Dashboard";
+import BusinessProfile from "../pages/BusinessProfile";
+import FinancialData from "../pages/FinancialData";
+import ImportData from "../pages/ImportData";
+import RevenueAnalysis from "../pages/RevenueAnalysis";
+import ExpenseAnalysis from "../pages/ExpenseAnalysis";
+import ProfitLoss from "../pages/ProfitLoss";
+import ProfitMargin from "../pages/ProfitMargin";
+import CashFlow from "../pages/CashFlow";
+import RatioAnalysis from "../pages/RatioAnalysis";
 import BreakEven from "../pages/breakEven";
-import ProductProfitability from "../pages/productProfitability";
-import TrendAnalysis from "../pages/trendAnalysis";
-import GoalPlanning from "../pages/goalPlanning";
-import ScenarioAnalysis from "../pages/scenarioAnalysis";
-import NotFound from "../pages/notFound";
-import DashboardLayout from "../layouts/dashboardLayout";
-import ProtectedRoute from "./protectedRoutes";
+import ProductProfitability from "../pages/ProductProfitability";
+import TrendAnalysis from "../pages/TrendAnalysis";
+import GoalPlanning from "../pages/GoalPlanning";
+import ScenarioAnalysis from "../pages/ScenarioAnalysis";
+import NotFound from "../pages/NotFound";
+import DashboardLayout from "../layouts/DashboardLayout";
+import ProtectedRoute from "./ProtectedRoutes";
 
 function AppRoutes() {
   const dashboardPages = [

@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import useInactivityLogout from "../hooks/useInactivityLogout";
+import useInactivityLogout from "../hooks/UseInactivityLogout";
 
 function ProtectedRoute({ children }) {
   const token = localStorage.getItem("finsight_token");

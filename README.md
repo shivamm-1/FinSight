@@ -105,47 +105,47 @@ FinSight/
 │   ├── .env                            # Backend environment secrets (DO NOT COMMIT)
 │   ├── package.json                    # Server dependencies and lifecycle scripts
 │   ├── package-lock.json               # Locked dependency resolution tree
-│   ├── server.js                       # Primary HTTP listener and runtime entry point
+│   ├── Server.js                       # Primary HTTP listener and runtime entry point
 │   ├── scripts/                        # Administrative seed and migration utilities
 │   │   ├── assignBusinessOwner.js      # Associate ownership privileges to profiles
 │   │   └── createAdmin.js              # Bootstrap initial administrative user
 │   └── src/
-│       ├── app.js                      # Express configuration, CORS, and route aggregation
+│       ├── App.js                      # Express configuration, CORS, and route aggregation
 │       ├── calculations/               # Core deterministic mathematical engines
-│       │   ├── breakEvenCalculations.js
-│       │   ├── cashFlowCalculations.js
-│       │   ├── financialCalculations.js
-│       │   ├── financialRatioCalculations.js
-│       │   ├── financialTrendCalculations.js
-│       │   └── whatIfCalculations.js
+│       │   ├── BreakEvenCalculations.js
+│       │   ├── CashFlowCalculations.js
+│       │   ├── FinancialCalculations.js
+│       │   ├── FinancialRatioCalculations.js
+│       │   ├── FinancialTrendCalculations.js
+│       │   └── WhatIfCalculations.js
 │       ├── config/
-│       │   └── database.js             # Database client connection orchestration
+│       │   └── Database.js             # Database client connection orchestration
 │       ├── controllers/                # Request orchestration and HTTP response formats
-│       │   ├── authController.js
-│       │   ├── businessProfileController.js
-│       │   ├── financialAnalysisController.js
-│       │   └── financialDataController.js
+│       │   ├── AuthController.js
+│       │   ├── BusinessProfileController.js
+│       │   ├── FinancialAnalysisController.js
+│       │   └── FinancialDataController.js
 │       ├── middleware/                 # Interceptors: authentication, roles, validations
-│       │   ├── authenticate.js
-│       │   ├── authorizeRoles.js
-│       │   └── validate.js
+│       │   ├── Authenticate.js
+│       │   ├── AuthorizeRoles.js
+│       │   └── Validate.js
 │       ├── models/                     # Data schemas for MongoDB entities
-│       │   ├── businessProfile.js
-│       │   ├── financialData.js
-│       │   └── user.js
+│       │   ├── BusinessProfile.js
+│       │   ├── FinancialData.js
+│       │   └── User.js
 │       ├── routes/                     # REST endpoint definitions
-│       │   ├── authRoutes.js
-│       │   ├── businessProfileRoutes.js
-│       │   ├── financialAnalysisRoutes.js
-│       │   └── financialDataRoutes.js
+│       │   ├── AuthRoutes.js
+│       │   ├── BusinessProfileRoutes.js
+│       │   ├── FinancialAnalysisRoutes.js
+│       │   └── FinancialDataRoutes.js
 │       ├── services/                   # Business logic and cross-controller operations
-│       │   └── financialAnalysisService.js
+│       │   └── FinancialAnalysisService.js
 │       └── validators/                 # Request payload schema guards
-│           ├── authValidator.js
-│           ├── businessProfileUpdateValidator.js
-│           ├── businessProfileValidator.js
-│           ├── financialDataUpdateValidator.js
-│           └── financialDataValidator.js
+│           ├── AuthValidator.js
+│           ├── BusinessProfileUpdateValidator.js
+│           ├── BusinessProfileValidator.js
+│           ├── FinancialDataUpdateValidator.js
+│           └── FinancialDataValidator.js
 └── frontend/                           # Client-side SPA
     ├── .env                            # Client environment variables (build-time injected)
     ├── .gitignore                      # Frontend-scoped build and artifact exclusions
@@ -155,51 +155,52 @@ FinSight/
     ├── package-lock.json               # Locked dependency tree
     ├── vite.config.js                  # Vite pipeline, Tailwind, and React plugin bin
     └── src/
-        ├── app.jsx                     # Top-level shell and route provider mount
+        ├── App.jsx                     # Top-level shell and route provider mount
         ├── index.css                   # Global Tailwind utilities
         ├── main.jsx                    # React virtual DOM root mount
         ├── components/                 # Shared UI component primitives
-        │   ├── button.jsx
-        │   ├── card.jsx
-        │   ├── errorMessage.jsx
-        │   ├── input.jsx
-        │   ├── loading.jsx
-        │   ├── modal.jsx
-        │   └── sidebar.jsx
-        ├── hooks/                      # Custom React hooks (e.g., useInactivityLogout)
+        │   ├── Button.jsx
+        │   ├── Card.jsx
+        │   ├── ErrorMessage.jsx
+        │   ├── Input.jsx
+        │   ├── Loading.jsx
+        │   ├── Modal.jsx
+        │   └── Sidebar.jsx
+        ├── hooks/                      # Custom React hooks
+        │   └── UseInactivityLogout.js
         ├── layouts/                    # Layout templates
-        │   ├── authLayout.jsx          # Public/Authentication screens
-        │   └── dashboardLayout.jsx     # Authenticated application shell
+        │   ├── AuthLayout.jsx          # Public/Authentication screens
+        │   └── DashboardLayout.jsx     # Authenticated application shell
         ├── pages/                      # Routed views and feature dashboards
-        │   ├── breakEven.jsx
-        │   ├── businessProfile.jsx
-        │   ├── cashFlow.jsx
-        │   ├── dashboard.jsx
-        │   ├── expenseAnalysis.jsx
-        │   ├── financialData.jsx
-        │   ├── goalPlanning.jsx
-        │   ├── home.jsx
-        │   ├── importData.jsx
-        │   ├── login.jsx
-        │   ├── notFound.jsx
-        │   ├── productProfitability.jsx
-        │   ├── profitLoss.jsx
-        │   ├── profitMargin.jsx
-        │   ├── ratioAnalysis.jsx
-        │   ├── register.jsx
-        │   ├── revenueAnalysis.jsx
-        │   ├── scenarioAnalysis.jsx
-        │   └── trendAnalysis.jsx
+        │   ├── BreakEven.jsx
+        │   ├── BusinessProfile.jsx
+        │   ├── CashFlow.jsx
+        │   ├── Dashboard.jsx
+        │   ├── ExpenseAnalysis.jsx
+        │   ├── FinancialData.jsx
+        │   ├── GoalPlanning.jsx
+        │   ├── Home.jsx
+        │   ├── ImportData.jsx
+        │   ├── Login.jsx
+        │   ├── NotFound.jsx
+        │   ├── ProductProfitability.jsx
+        │   ├── ProfitLoss.jsx
+        │   ├── ProfitMargin.jsx
+        │   ├── RatioAnalysis.jsx
+        │   ├── Register.jsx
+        │   ├── RevenueAnalysis.jsx
+        │   ├── ScenarioAnalysis.jsx
+        │   └── TrendAnalysis.jsx
         ├── routes/                     # Router hierarchy and protected route barriers
-        │   ├── appRoutes.jsx
-        │   └── protectedRoutes.jsx
+        │   ├── AppRoutes.jsx
+        │   └── ProtectedRoutes.jsx
         ├── services/                   # HTTP client interfaces
-        │   ├── api.js                  # Axios client with bearer token interceptor
-        │   ├── authService.js
-        │   ├── businessProfileService.js
-        │   └── financialDataService.js
+        │   ├── Api.js                  # Axios client with bearer token interceptor
+        │   ├── AuthService.js
+        │   ├── BusinessProfileService.js
+        │   └── FinancialDataService.js
         └── utils/                      # Client-side calculation and data parsing helpers
-            └── financialCalculations.js
+            └── FinancialCalculations.js
 
 ```
 
@@ -295,7 +296,7 @@ node scripts/createAdmin.js
 ```bash
 npm run dev
 # Or standard execution if dev is not configured:
-# npm start / node server.js
+# npm start / node Server.js
 
 ```
 
@@ -339,7 +340,7 @@ npm run dev
 
 ### Backend (`/backend`)
 
-- `npm start`: Runs the Node production server using `server.js`.
+- `npm start`: Runs the Node production server using `Server.js`.
 - `npm run dev`: Starts the backend server with hot-reload (if configured with tools like `nodemon`).
 
 ### Frontend (`/frontend`)
@@ -353,7 +354,7 @@ npm run dev
 
 ## API Architecture & Endpoints
 
-All backend routes are mounted under the `/api` prefix and return JSON payloads. Protected routes require an `Authorization: Bearer <token>` header, handled automatically by the frontend Axios interceptor (`src/services/api.js`).
+All backend routes are mounted under the `/api` prefix and return JSON payloads. Protected routes require an `Authorization: Bearer <token>` header, handled automatically by the frontend Axios interceptor (`src/services/Api.js`).
 
 ### Base Routes Overview
 
@@ -370,9 +371,9 @@ All backend routes are mounted under the `/api` prefix and return JSON payloads.
 
 The persistence layer uses document collections designed around business segregation:
 
-- **Users (`models/user.js`):** Contains identity data, credentials (hashed via bcrypt or similar hashing algorithm), role levels (`admin`, `business_owner`), and profile associations.
-- **Business Profile (`models/businessProfile.js`):** Company identifier, registered operational name, target currency, fiscal year definition, and operational parameters.
-- **Financial Data (`models/financialData.js`):** Transaction-level entries tagged with timestamps, category (Revenue, COGS, Operating Expense, Capital Expenditure), amount, payment terms, and user/business relational ID references.
+- **Users (`models/User.js`):** Contains identity data, credentials (hashed via bcrypt or similar hashing algorithm), role levels (`admin`, `business_owner`), and profile associations.
+- **Business Profile (`models/BusinessProfile.js`):** Company identifier, registered operational name, target currency, fiscal year definition, and operational parameters.
+- **Financial Data (`models/FinancialData.js`):** Transaction-level entries tagged with timestamps, category (Revenue, COGS, Operating Expense, Capital Expenditure), amount, payment terms, and user/business relational ID references.
 
 ---
 
@@ -401,7 +402,7 @@ FinSight is designed to be deployed as two decoupled services:
 - **Root Directory:** `backend`
 - **Environment:** `Node`
 - **Build Command:** `npm install`
-- **Start Command:** `npm start` (or `node server.js`)
+- **Start Command:** `npm start` (or `node Server.js`)
 
 3. Add the required environment variables:
 
@@ -448,11 +449,11 @@ FinSight is designed to be deployed as two decoupled services:
 
 ### 3. Calculation Discrepancies (Frontend vs. Backend)
 
-- **Design Rule:** The backend calculation modules (`backend/src/calculations/`) are the single source of truth for business metrics and reports. Frontend utilities in `frontend/src/utils/financialCalculations.js` are reserved for local UI previews, dynamic form feedback, and instant estimations.
+- **Design Rule:** The backend calculation modules (`backend/src/calculations/`) are the single source of truth for business metrics and reports. Frontend utilities in `frontend/src/utils/FinancialCalculations.js` are reserved for local UI previews, dynamic form feedback, and instant estimations.
 
 ### 4. Unused Components & Stale Links
 
-- **Sidebar Link (`/dashboard-insights`):** The sidebar includes a navigation link pointing to `/dashboard-insights`. Verify route definitions in `frontend/src/routes/appRoutes.jsx` before modifying or removing this route.
+- **Sidebar Link (`/dashboard-insights`):** The sidebar includes a navigation link pointing to `/dashboard-insights`. Verify route definitions in `frontend/src/routes/AppRoutes.jsx` before modifying or removing this route.
 - **Component Deduplication:** Ensure you import shared components directly from `frontend/src/components/`. If you encounter duplicate local components inside view pages (such as `StatCard`), keep them intact unless you are explicitly running a refactoring pass with visual verification.
 
 ---

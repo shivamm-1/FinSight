@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const mongoose = require("mongoose");
-const User = require("../models/user.js");
+const User = require("../models/User.js");
 
 async function authenticate(req, res, next) {
   try {

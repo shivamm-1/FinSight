@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import { registerAccount, loginAccount } from "../services/authService";
-import { createBusinessProfile } from "../services/businessProfileService";
+import { registerAccount, loginAccount } from "../services/AuthService";
+import { createBusinessProfile } from "../services/BusinessProfileService";
 
 function Register() {
   const navigate = useNavigate();

@@ -4,7 +4,7 @@ import {
   getBusinessProfile,
   createBusinessProfile,
   updateBusinessProfile,
-} from "../services/businessProfileService";
+} from "../services/BusinessProfileService";
 
 function BusinessProfile() {
   const [formData, setFormData] = useState({

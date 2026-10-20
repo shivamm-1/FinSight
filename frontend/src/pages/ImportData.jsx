@@ -14,7 +14,7 @@ import {
   FileUp,
 } from "lucide-react";
 import toast from "react-hot-toast";
-import { createFinancialData } from "../services/financialDataService";
+import { createFinancialData } from "../services/FinancialDataService";
 
 const REQUIRED_COLUMNS = [
   "date",

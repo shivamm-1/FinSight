@@ -1,6 +1,6 @@
 const {
   getFinancialAnalysis,
-} = require("../services/financialAnalysisService.js");
+} = require("../services/FinancialAnalysisService.js");
 
 async function getFinancialAnalysisController(req, res) {
   try {

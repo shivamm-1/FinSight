@@ -9,7 +9,7 @@ import {
   Legend,
 } from "chart.js";
 import { Line } from "react-chartjs-2";
-import { getFinancialData } from "../services/financialDataService";
+import { getFinancialData } from "../services/FinancialDataService";
 
 ChartJS.register(
   CategoryScale,

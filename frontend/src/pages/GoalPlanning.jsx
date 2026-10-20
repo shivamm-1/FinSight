@@ -9,7 +9,7 @@ import {
   AlertCircle,
   RefreshCw,
 } from "lucide-react";
-import { getFinancialData } from "../services/financialDataService";
+import { getFinancialData } from "../services/FinancialDataService";
 
 function getTransactions(response) {
   if (Array.isArray(response)) return response;

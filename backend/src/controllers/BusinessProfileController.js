@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const BusinessProfile = require("../models/businessProfile.js");
+const BusinessProfile = require("../models/BusinessProfile.js");
 
 async function getBusinessProfile(req, res) {
   try {

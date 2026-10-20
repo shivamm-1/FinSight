@@ -15,7 +15,7 @@ import {
   createFinancialData,
   updateFinancialData,
   deleteFinancialData,
-} from "../services/financialDataService";
+} from "../services/FinancialDataService";
 
 const initialForm = {
   type: "Revenue",
