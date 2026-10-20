@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { getFinancialData } from "../services/financialDataService";
+import { getFinancialData } from "../services/FinancialDataService";
 
 const formatCurrency = (value) =>
   new Intl.NumberFormat("en-IN", {

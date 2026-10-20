@@ -3,7 +3,7 @@ require("dotenv").config();
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 const connectDatabase = require("../src/config/database");
-const User = require("../src/models/user.js");
+const User = require("../src/models/User.js");
 
 async function createAdmin() {
   try {

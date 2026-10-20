@@ -4,19 +4,19 @@ const {
   getBusinessProfile,
   createBusinessProfile,
   updateBusinessProfile,
-} = require("../controllers/businessProfileController.js");
+} = require("../controllers/BusinessProfileController.js");
 
-const validate = require("../middleware/validate.js");
-const authenticate = require("../middleware/authenticate.js");
-const authorizeRoles = require("../middleware/authorizeRoles.js");
+const validate = require("../middleware/Validate.js");
+const authenticate = require("../middleware/Authenticate.js");
+const authorizeRoles = require("../middleware/AuthorizeRoles.js");
 
 const {
   businessProfileSchema,
-} = require("../validators/businessProfileValidator.js");
+} = require("../validators/BusinessProfileValidator.js");
 
 const {
   businessProfileUpdateSchema,
-} = require("../validators/businessProfileUpdateValidator.js");
+} = require("../validators/BusinessProfileUpdateValidator.js");
 
 const router = express.Router();
 

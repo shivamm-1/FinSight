@@ -27,8 +27,8 @@ import {
 import { Bar, Doughnut, Line } from "react-chartjs-2";
 import toast from "react-hot-toast";
 
-import { getFinancialData } from "../services/financialDataService";
-import { getBusinessProfile } from "../services/businessProfileService";
+import { getFinancialData } from "../services/FinancialDataService";
+import { getBusinessProfile } from "../services/BusinessProfileService";
 
 ChartJS.register(
   CategoryScale,

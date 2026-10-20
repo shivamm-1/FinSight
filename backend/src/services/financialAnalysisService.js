@@ -1,18 +1,18 @@
-const BusinessProfile = require("../models/businessProfile.js");
-const FinancialData = require("../models/financialData.js");
+const BusinessProfile = require("../models/BusinessProfile.js");
+const FinancialData = require("../models/FinancialData.js");
 
 const {
   calculateFinancialSummary,
   calculateProfitByCategory,
-} = require("../calculations/financialCalculations.js");
+} = require("../calculations/FinancialCalculations.js");
 
 const {
   calculateFinancialTrends,
-} = require("../calculations/financialTrendCalculations.js");
+} = require("../calculations/FinancialTrendCalculations.js");
 
 const {
   calculateCashFlowSummary,
-} = require("../calculations/cashFlowCalculations.js");
+} = require("../calculations/CashFlowCalculations.js");
 
 async function getFinancialAnalysis(userId) {
   const businessProfile = await BusinessProfile.findOne({

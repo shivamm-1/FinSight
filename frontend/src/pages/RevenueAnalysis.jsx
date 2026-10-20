@@ -10,7 +10,7 @@ import {
   TrendingUp,
   Wallet,
 } from "lucide-react";
-import { getFinancialData } from "../services/financialDataService";
+import { getFinancialData } from "../services/FinancialDataService";
 
 const MONTHS = [
   "April",

@@ -2,8 +2,8 @@ require("dotenv").config();
 
 const mongoose = require("mongoose");
 const connectDatabase = require("../src/config/database");
-const User = require("../src/models/user.js");
-const BusinessProfile = require("../src/models/businessProfile.js");
+const User = require("../src/models/User.js");
+const BusinessProfile = require("../src/models/BusinessProfile.js");
 
 async function assignBusinessOwner() {
   try {

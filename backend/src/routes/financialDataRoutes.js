@@ -5,19 +5,19 @@ const {
   createFinancialData,
   updateFinancialData,
   deleteFinancialData,
-} = require("../controllers/financialDataController.js");
+} = require("../controllers/FinancialDataController.js");
 
-const validate = require("../middleware/validate.js");
-const authenticate = require("../middleware/authenticate.js");
-const authorizeRoles = require("../middleware/authorizeRoles.js");
+const validate = require("../middleware/Validate.js");
+const authenticate = require("../middleware/Authenticate.js");
+const authorizeRoles = require("../middleware/AuthorizeRoles.js");
 
 const {
   financialDataSchema,
-} = require("../validators/financialDataValidator.js");
+} = require("../validators/FinancialDataValidator.js");
 
 const {
   financialDataUpdateSchema,
-} = require("../validators/financialDataUpdateValidator.js");
+} = require("../validators/FinancialDataUpdateValidator.js");
 
 const router = express.Router();
 
