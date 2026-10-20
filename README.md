@@ -105,12 +105,12 @@ FinSight/
 │   ├── .env                            # Backend environment secrets (DO NOT COMMIT)
 │   ├── package.json                    # Server dependencies and lifecycle scripts
 │   ├── package-lock.json               # Locked dependency resolution tree
-│   ├── Server.js                       # Primary HTTP listener and runtime entry point
+│   ├── server.js                       # Primary HTTP listener and runtime entry point
 │   ├── scripts/                        # Administrative seed and migration utilities
 │   │   ├── assignBusinessOwner.js      # Associate ownership privileges to profiles
 │   │   └── createAdmin.js              # Bootstrap initial administrative user
 │   └── src/
-│       ├── App.js                      # Express configuration, CORS, and route aggregation
+│       ├── app.js                      # Express configuration, CORS, and route aggregation
 │       ├── calculations/               # Core deterministic mathematical engines
 │       │   ├── BreakEvenCalculations.js
 │       │   ├── CashFlowCalculations.js
@@ -296,7 +296,7 @@ node scripts/createAdmin.js
 ```bash
 npm run dev
 # Or standard execution if dev is not configured:
-# npm start / node Server.js
+# npm start / node server.js
 
 ```
 
@@ -340,7 +340,7 @@ npm run dev
 
 ### Backend (`/backend`)
 
-- `npm start`: Runs the Node production server using `Server.js`.
+- `npm start`: Runs the Node production server using `server.js`.
 - `npm run dev`: Starts the backend server with hot-reload (if configured with tools like `nodemon`).
 
 ### Frontend (`/frontend`)
@@ -402,7 +402,7 @@ FinSight is designed to be deployed as two decoupled services:
 - **Root Directory:** `backend`
 - **Environment:** `Node`
 - **Build Command:** `npm install`
-- **Start Command:** `npm start` (or `node Server.js`)
+- **Start Command:** `npm start` (or `node server.js`)
 
 3. Add the required environment variables:
 
