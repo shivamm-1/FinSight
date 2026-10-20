@@ -119,7 +119,7 @@ FinSight/
 │       │   ├── FinancialTrendCalculations.js
 │       │   └── WhatIfCalculations.js
 │       ├── config/
-│       │   └── Database.js             # Database client connection orchestration
+│       │   └── database.js             # Database client connection orchestration
 │       ├── controllers/                # Request orchestration and HTTP response formats
 │       │   ├── AuthController.js
 │       │   ├── BusinessProfileController.js
